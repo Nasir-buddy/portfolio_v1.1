@@ -3,7 +3,7 @@ import './About.scss'
 import { motion } from 'framer-motion'
 
 import { client, urlFor } from '../../client'
-import { AppWrap } from '../../wrapper'
+import { AppWrap, MotionWrap } from '../../wrapper'
 
 const About = () => {
 
@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <>
-      <h2 style={{marginTop: 50}} className='head-text'>I know that <span> Good Development </span> <br /> means <span> Good Business </span></h2>
+      <h2 className='head-text'>I know that <span> Good Development </span> <br /> means <span> Good Business </span></h2>
       <div className='app__profiles'>
         {about.map((item, index) => (
           <motion.div
@@ -43,4 +43,8 @@ const About = () => {
   )
 }
 
-export default AppWrap(About, 'about');
+export default AppWrap(
+  MotionWrap(About, 'app__about'), 
+  'about', 
+  'app__whitebg'
+);

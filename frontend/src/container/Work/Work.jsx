@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { AppWrap, MotionWrap } from '../../wrapper'
 import { urlFor, client } from '../../client'
 import './Work.scss'
+import Autotype from '../Header/Autotype'
 const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -23,24 +24,24 @@ const Work = () => {
   }, [])
 
   const handleWorkFilter = (item) => {
-      setActiveFilter(item);
-      setAnimateCard([{ y: 100, opacity: 0 }]);
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
 
-      setTimeout(()=>{
-        setAnimateCard([{ y: 0, opacity: 1 }]);
-        if(item === 'All'){
-          console.log(setFilterWork(works))
-        } else {
-          console.log(setFilterWork(works.filter((work) => work.tags.includes(item))));
-        }
-      }, 500)
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+      if (item === 'All') {
+        console.log(setFilterWork(works))
+      } else {
+        console.log(setFilterWork(works.filter((work) => work.tags.includes(item))));
+      }
+    }, 500)
   }
 
   return (
     <>
-      <h2 className='head-text'>My Creative <span> Portfolio </span><span> Section </span></h2>
+      <h2 className='head-text'>My Creative <span><Autotype strings={['Projects And', 'Certifications']} /></span></h2>
       <div className='app__work-filter'>
-        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+        {['Web App', 'Basic Sites', 'Portfolio', 'Certifications', 'All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -60,7 +61,7 @@ const Work = () => {
             <div className='app__work-img app__flex'>
               <img src={urlFor(item.imgUrl)} alt={item.name} />
 
-              <motion.div
+              {/* <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 className='app__work-hover app__flex'
@@ -85,13 +86,20 @@ const Work = () => {
                     <AiFillGithub />
                   </motion.div>
                 </a>
-              </motion.div>
+              </motion.div> */}
             </div>
 
             <div className='app__work-content app__flex'>
               <h4 className='bold-text'>{item.title}</h4>
               <p className='p-text' style={{ marginTop: 10 }}>{item.description}</p>
-
+              <div className='btn'>
+                <a href={item.codeLink} target='_blank' rel='noreferrer'>
+                <button>Github Code</button>
+                </a>
+                <a href={item.projectLink} target='_blank' rel='noreferrer'>
+                <button>Project Link</button>
+                </a>
+              </div>
               <div
                 className='app__work-tag app__flex'>
                 <p className='p-text'>{item.tags[0]}</p>
@@ -105,7 +113,7 @@ const Work = () => {
 }
 
 export default AppWrap(
-  MotionWrap(Work, 'app__works'), 
-  'work', 
+  MotionWrap(Work, 'app__works'),
+  'work',
   'app__primarybg'
 );

@@ -32,7 +32,9 @@ const Footer = () => {
   };
   return (
     <>
-      <h2 className='head-text'>
+      <h2 className='head-text'
+      style={{ marginTop: 20}}
+      >
         Take a <span>Coffee</span> & chat with me <br /><span> in <Autotype strings={['Real Time']}/></span>
       </h2>
       <div className='app__footer-cards'>

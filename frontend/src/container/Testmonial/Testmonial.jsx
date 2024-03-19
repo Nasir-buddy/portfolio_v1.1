@@ -42,7 +42,9 @@ const Testmonial = () => {
   const test = testmonials[currentindex];
   return (
     <>
-    <h2 className='head-text'><span>Testi</span>monial On<br /> <span> <Autotype strings={['Degree', 'Collage', 'University' ]}/> </span></h2>
+    <h2 className='head-text'
+    style={{ marginTop: 20 }}
+    ><span>Testi</span>monial On<br /> <span> <Autotype strings={['Degree', 'Collage', 'University' ]}/> </span></h2>
       {testmonials.length && (
         <>
           <div className='app__testimonial-item app__flex'>

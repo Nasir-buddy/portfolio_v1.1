@@ -32,7 +32,9 @@ const Skills = () => {
   }, []);
   return (
     <>
-      <h2 className='head-text'>
+      <h2 className='head-text'
+      style={{ marginTop: 20 }}
+      >
         <span>Skills</span> & Experience
       </h2>
 

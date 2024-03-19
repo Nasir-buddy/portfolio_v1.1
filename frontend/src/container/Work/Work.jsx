@@ -39,7 +39,9 @@ const Work = () => {
 
   return (
     <>
-      <h2 className='head-text'>My Creative <span><Autotype strings={['Projects And', 'Certifications']} /></span></h2>
+      <h2 className='head-text' 
+      style={{ marginTop: 20 }}
+      >My Creative <br /><span><Autotype strings={['Certifications', 'Projects And']}/></span></h2>
       <div className='app__work-filter'>
         {['Web App', 'Basic Sites', 'Portfolio', 'Certifications', 'All'].map((item, index) => (
           <div

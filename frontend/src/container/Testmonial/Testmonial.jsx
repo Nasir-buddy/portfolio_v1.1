@@ -6,6 +6,7 @@ import { HiChevronLeft, HiChevronRight} from 'react-icons/hi'
 import { AppWrap, MotionWrap } from '../../wrapper'
 import { urlFor, client } from '../../client'
 import './Testmonial.scss'
+import Autotype from '../Header/Autotype'
 
 const Testmonial = () => {
   const [brands, setBrands] = useState([]);
@@ -41,6 +42,7 @@ const Testmonial = () => {
   const test = testmonials[currentindex];
   return (
     <>
+    <h2 className='head-text'><span>Testi</span>monial On<br /> <span> <Autotype strings={['Degree', 'Collage', 'University' ]}/> </span></h2>
       {testmonials.length && (
         <>
           <div className='app__testimonial-item app__flex'>
@@ -74,7 +76,6 @@ const Testmonial = () => {
           whileInView={{ opacity: [0, 1]}}
           transition={{ duration: 0.5, type: 'tween'}}
           key={brand._id}
-
           >
           <img src={urlFor(brand.imgUrl)} alt={brand.name} />  
           </motion.div>

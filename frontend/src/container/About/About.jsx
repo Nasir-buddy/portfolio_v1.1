@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 import { client, urlFor } from '../../client'
 import { AppWrap, MotionWrap } from '../../wrapper'
+import Autotype from '../Header/Autotype'
 
 const About = () => {
 
@@ -23,7 +24,7 @@ const About = () => {
 
   return (
     <>
-      <h2 className='head-text'>I know that <span> Good Development </span> <br /> means <span> Good Business </span></h2>
+      <h2 className='head-text'>I know that <span> Good Skills </span> <br /> means <span> <Autotype strings={['More Optimization', 'Good Development', 'Clean code implementation', 'Better Logic']}/> </span></h2>
       <div className='app__profiles'>
         {about.map((item, index) => (
           <motion.div

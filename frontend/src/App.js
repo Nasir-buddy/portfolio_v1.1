@@ -1,11 +1,12 @@
 import logo from './logo.svg';
-import './App.css';
 
 import { About, Footer, Header, Skills, Testmonial, Work } from './container'
 // import { Navbar } from './components';
 import Navbar from './components/Navbar/Navbar';
+import LocomotiveScroll from 'locomotive-scroll';
 import './App.scss'
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <div className='app'>
       <Navbar />

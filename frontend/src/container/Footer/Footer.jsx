@@ -4,6 +4,7 @@ import './Footer.scss'
 import { images } from '../../constants'
 import { client } from '../../client'
 import { AppWrap, MotionWrap } from '../../wrapper'
+import Autotype from '../Header/Autotype';
 const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -32,7 +33,7 @@ const Footer = () => {
   return (
     <>
       <h2 className='head-text'>
-        Take a coffee & chat with me
+        Take a <span>Coffee</span> & chat with me <br /><span> in <Autotype strings={['Real Time']}/></span>
       </h2>
       <div className='app__footer-cards'>
         <div className='app__footer-card'>

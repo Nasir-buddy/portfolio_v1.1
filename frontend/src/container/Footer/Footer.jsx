@@ -56,6 +56,7 @@ const Footer = () => {
                 type="text"
                 placeholder='Your Name'
                 name="from_name"
+                required
               />
             </div>
             <div className='app__flex'>
@@ -63,12 +64,14 @@ const Footer = () => {
                 type="email"
                 placeholder='Your email'
                 name="from_name"
+                required
               />
             </div>
             <div className=''>
               <textarea className='p-text'
                 placeholder='Your Message'
                 name="message"
+                required
               />
             </div>
             <button type="submit" value="Send" >

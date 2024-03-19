@@ -14,12 +14,11 @@ const Skills = () => {
     // Fetch experiences
     client.fetch(query)
       .then((data) => {
-        console.log(data);
         setExperience(data);
       })
       .catch((error) => {
         console.log("Error fetching experiences:", error);
-      }, []);
+      });
 
     // Fetch skills
     client.fetch(skillsQuery)
@@ -39,12 +38,13 @@ const Skills = () => {
 
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
-          {skills?.map((skill) => (
+          {skills?.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className='app__skills-item app__flex'
               key={skill.name}
+              
             >
               <div className='app__flex' style={{ backgroundColor: skill.bgColor }}>
                 <img src={urlFor(skill.icon)} alt={skill.name} />
@@ -60,13 +60,12 @@ const Skills = () => {
         <motion.div
           className='app__skills-exp'
         >
-          {console.log('here', experiences.works)}
-          {experiences?.map((experiences) => (
+          {experiences?.map((experiences, index) => (
             <motion.div
               className='app__skills-exp-item'
               key={experiences.year}
             >
-              <div className='app__skills-exp-year'>
+              <div key={index} className='app__skills-exp-year'>
                 <p className='bold-text'>{experiences.year}</p>
               </div>
               <motion.div className='app__skills-exp-works'

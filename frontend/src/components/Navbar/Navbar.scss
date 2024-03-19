@@ -1,5 +1,6 @@
 .app__navbar {
   width: 100%;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,18 +12,22 @@
   position: fixed;
   z-index: 2;
 }
-.app__navbar-log {
+.app__navbar-logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   img {
-    width: 90px;
-    height: 20px;
+    width: 255px;
+    height: 90px;
 
+    @media screen and (max-width: 400px) {
+      width: 200px;
+      height: 70px;
+    }
     @media screen and (min-width: 2000px) {
-      width: 180px;
-      height: 40px;
+      width: 300px;
+      height: 110px;
     }
   }
 }

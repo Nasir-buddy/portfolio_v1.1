@@ -30,9 +30,9 @@ const Work = () => {
     setTimeout(() => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
       if (item === 'All') {
-        console.log(setFilterWork(works))
+        setFilterWork(works);
       } else {
-        console.log(setFilterWork(works.filter((work) => work.tags.includes(item))));
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
       }
     }, 500)
   }

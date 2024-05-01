@@ -16,8 +16,12 @@ const Header = () => {
         }
     }
     const handleDownloadResume = () => {
-        if (window.confirm("Are you sure you want to download rhe Updated Resume?")) {
-            window.open('https://drive.google.com/file/d/1sHWtxVaEji-ufMMrrp4erJWiqWoJtQcS/view?usp=sharing', '_blank')
+        try {
+            if (window.confirm("Are you sure you want to download rhe Updated Resume?")) {
+                window.open('https://drive.google.com/file/d/1sHWtxVaEji-ufMMrrp4erJWiqWoJtQcS/view?usp=sharing', '_blank')
+            }
+        } catch (error) {
+            console.log("Failed to download rhe Updated Resume.", error);
         }
 
     }
@@ -43,7 +47,7 @@ const Header = () => {
                     </div>
                     <div className='tag-cmp app__flex p-text' style={{ marginBottom: '30px', cursor: 'pointer' }}
                         onClick={handleDownloadResume} >
-                            Download Resume
+                        Download Resume
                     </div>
                 </div>
             </motion.div>

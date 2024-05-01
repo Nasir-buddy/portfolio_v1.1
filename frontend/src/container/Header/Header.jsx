@@ -60,7 +60,7 @@ const Header = () => {
                 variant={scaleVariants}
                 whileInView={scaleVariants.whileInView}
                 className='app__header-circles'>
-                {[images.flutter, images.redux, images.sass].map((item, index) => (
+                {[images.react, images.node, images.git].map((item, index) => (
                     <div key={index}>
                         <img  src={item} alt="circle" />
                     </div>

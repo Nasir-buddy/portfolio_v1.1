@@ -15,6 +15,12 @@ const Header = () => {
             }
         }
     }
+    const handleDownloadResume = () => {
+        if (window.confirm("Are you sure you want to download rhe Updated Resume?")) {
+            window.open('https://drive.google.com/file/d/1sHWtxVaEji-ufMMrrp4erJWiqWoJtQcS/view?usp=sharing', '_blank')
+        }
+
+    }
     return (
         <div className='app__header app__flex'>
             <motion.div
@@ -25,15 +31,19 @@ const Header = () => {
                 <div className='app__header-badge'>
                     <div className='badge-cmp app__flex'>
                         <span>👋</span>
-                        <div style={{  marginLeft: 20 }}>
+                        <div style={{ marginLeft: 20 }}>
                             <p className='p-text'>Hello, I am </p>
-                            <h1 className='head-text'><Autotype strings={['Nasir Ali']}/></h1>
+                            <h1 className='head-text'><Autotype strings={['Nasir Ali']} /></h1>
 
                         </div>
                     </div>
                     <div className='tag-cmp app__flex'>
                         <p className='p-text'>Web Developer</p>
                         <p className='p-text'>DSA Learner</p>
+                    </div>
+                    <div className='tag-cmp app__flex p-text' style={{ marginBottom: '30px', cursor: 'pointer' }}
+                        onClick={handleDownloadResume} >
+                            Download Resume
                     </div>
                 </div>
             </motion.div>
@@ -62,7 +72,7 @@ const Header = () => {
                 className='app__header-circles'>
                 {[images.react, images.node, images.git].map((item, index) => (
                     <div key={index}>
-                        <img  src={item} alt="circle" />
+                        <img src={item} alt="circle" />
                     </div>
                 ))}
             </motion.div>

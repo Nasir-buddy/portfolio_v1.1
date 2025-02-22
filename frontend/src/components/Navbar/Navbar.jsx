@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Navbar.scss'
 import { images } from '../../constants'
 import { HiMenuAlt4 } from "react-icons/hi";
@@ -7,6 +7,32 @@ import { motion } from 'framer-motion'
 const Navbar = () => {
 
   const [toggle, setToggle] = useState();
+
+  useEffect(() => {
+    let lastScroll = 0;
+    
+    const handleScroll = () => {
+      const currentScroll = window.pageYOffset;
+      const navbar = document.querySelector('.app__navbar');
+      
+      if (currentScroll > lastScroll && currentScroll > 0) {
+        // Scrolling down
+        navbar.classList.add('scrolled');
+      } else {
+        // Scrolling up
+        navbar.classList.remove('scrolled');
+      }
+      
+      lastScroll = currentScroll;
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>

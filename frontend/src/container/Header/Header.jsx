@@ -42,8 +42,8 @@ const Header = () => {
                         </div>
                     </div>
                     <div className='tag-cmp app__flex'>
-                        <p className='p-text'>Web Developer</p>
-                        <p className='p-text'>DSA Learner</p>
+                        <p className='p-text'>jr. SDE</p>
+                        <p className='p-text'>@Excellence Technologies</p>
                     </div>
                     <div className='tag-cmp app__flex p-text' style={{ marginBottom: '30px', cursor: 'pointer' }}
                         onClick={handleDownloadResume} >

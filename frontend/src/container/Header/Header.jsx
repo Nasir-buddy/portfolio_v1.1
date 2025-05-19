@@ -18,7 +18,7 @@ const Header = () => {
     const handleDownloadResume = () => {
         try {
             if (window.confirm("Are you sure you want to download rhe Updated Resume?")) {
-                window.open('https://drive.google.com/file/d/1-GBqilZM-HgnVlI0uwW63CwQo0LrI3wr/view?usp=drive_link', '_blank')
+                window.open('https://drive.google.com/file/d/14JGWRAhouKwrzE8rRNkFw6MLZmcrsKO9/view?usp=drive_link', '_blank')
             }
         } catch (error) {
             console.log("Failed to download rhe Updated Resume.", error);

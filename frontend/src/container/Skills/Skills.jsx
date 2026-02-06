@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Tooltip as ReactTooltip } from 'react-tooltip';
+// import { Tooltip as ReactTooltip } from 'react-tooltip';
 import { AppWrap, MotionWrap } from '../../wrapper'
-import { urlFor, client } from '../../client'
+import { client } from '../../client'
 
 import './Skills.scss'
 const Skills = () => {
   const [experiences, setExperience] = useState([]);
-  const [skills, setSkills] = useState([]);
+  const [, setSkills] = useState([]);
   useEffect(() => {
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]'

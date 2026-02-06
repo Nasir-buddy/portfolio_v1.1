@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.scss'
-import { easeInOut, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Autotype from './Autotype'
 import { images } from '../../constants'
 import { AppWrap } from '../../wrapper'

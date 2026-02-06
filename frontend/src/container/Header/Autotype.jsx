@@ -3,11 +3,11 @@ import Typed from 'typed.js';
 
 const Autotype = ({ strings }) => {
   const typedElement = useRef(null);
-  let typed = null;
+  const typedRef = useRef(null);
 
   useEffect(() => {
     if (typedElement.current) {
-      typed = new Typed(typedElement.current, {
+      typedRef.current = new Typed(typedElement.current, {
         strings: strings,
         typeSpeed: 100, 
         backSpeed: 40, 
@@ -16,8 +16,8 @@ const Autotype = ({ strings }) => {
     }
 
     return () => {
-      if (typed) {
-        typed.destroy();
+      if (typedRef.current) {
+        typedRef.current.destroy();
       }
     };
   }, [strings]);

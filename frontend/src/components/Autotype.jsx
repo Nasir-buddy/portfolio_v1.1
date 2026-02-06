@@ -7,12 +7,15 @@ const Autotype = ({ strings }) => {
 
   useEffect(() => {
     if (typedElement.current) {
-      typed = new Typed(typedElement.current, {
+      const typedInstance = new Typed(typedElement.current, {
         strings: strings,
         typeSpeed: 100, 
         backSpeed: 40, 
         loop: true, 
       });
+      return () => {
+        typedInstance.destroy();
+      };
     }
 
     return () => {

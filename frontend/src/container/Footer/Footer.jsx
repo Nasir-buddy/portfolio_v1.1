@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser';
 import './Footer.scss'
 import { images } from '../../constants'
-import { client } from '../../client'
+// import { client } from '../../client'
 import { AppWrap, MotionWrap } from '../../wrapper'
 import Autotype from '../Header/Autotype';
 const Footer = () => {
